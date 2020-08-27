@@ -11,18 +11,21 @@ import (
 )
 
 type student struct{
-	FirstName string `json:"firstName"`
-	MiddleName string `json:"middleName"`
-	LastName string `json:"lastName"`
-	ID string `json:"id"`
-	Discord string `json:"discord"`
+	FirstName string	`bson:"firstName"`
+	MiddleName string 	`bson:"middleName"`
+	LastName string 	`bson:"lastName"`
+	ID string 			`bson:"id"`
+	Role string			`bson:"role"`
+	Discord string 		`bson:"discord"`
 }
 
 type question struct{
-	Student student
-	Category string
-	Content string
-	Answered bool
+	Student student 	`bson:"student"`
+	ChannelID string 	`bson:"channelId"`
+	Timestamp int64 	`bson:"timestamp"`
+	Topic []string 		`bson:"topic"`
+	Question string 	`bson:"question"`
+	Active bool 		`bson:"active"`
 }
 
 func getStudents() []student{
@@ -38,19 +41,38 @@ func getStudents() []student{
 	}
 	ctx, _ = context.WithTimeout(context.Background(), 10*time.Second)
 	cursor, err := client.Database("dtu").Collection("students").Find(ctx,bson.M{})
-	var stud bson.M
 	var ret student
 	for cursor.TryNext(context.Background()){
-		cursor.Decode(&stud)
-		ret = student{
-			FirstName:  stud["f_name"].(string),
-			MiddleName: stud["m_name"].(string),
-			LastName:   stud["l_name"].(string),
-			ID:         stud["id"].(string),
-			Discord:    stud["discord"].(string),
-		}
+		cursor.Decode(&ret)
 		students = append(students, ret)
 	}
 	defer client.Disconnect(ctx)
 	return students
+}
+
+func getQuestions() []question{
+	var questions []question
+	client, err := mongo.NewClient(options.Client().ApplyURI(os.Getenv("MONGO_URI")))
+	if err != nil {
+		log.Fatal(err)
+	}
+	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+	err = client.Connect(ctx)
+	if err != nil {
+		log.Fatal(err)
+	}
+	ctx, _ = context.WithTimeout(context.Background(), 10*time.Second)
+	cursor, err := client.Database("dtu").Collection("questions").Find(ctx,bson.M{})
+	if err != nil {
+		log.Println("getting cursor:",err)
+	}
+
+	var ret question
+
+	for cursor.Next(context.TODO()){
+		cursor.Decode(&ret)
+		questions = append(questions, ret)
+	}
+	defer client.Disconnect(ctx)
+	return questions
 }

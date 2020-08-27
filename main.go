@@ -27,6 +27,34 @@ var studentType = graphql.NewObject(
 			"lastName": &graphql.Field{
 				Type: graphql.String,
 			},
+			"role": &graphql.Field{
+				Type: graphql.String,
+			},
+		},
+	},
+)
+var questionType = graphql.NewObject(
+	graphql.ObjectConfig{
+		Name: "Question",
+		Fields: graphql.Fields{
+			"student": &graphql.Field{
+				Type: studentType,
+			},
+			"channelId": &graphql.Field{
+				Type: graphql.String,
+			},
+			"timestamp": &graphql.Field{
+				Type: graphql.Int,
+			},
+			"topic": &graphql.Field{
+				Type: graphql.NewList(graphql.String),
+			},
+			"question": &graphql.Field{
+				Type: graphql.String,
+			},
+			"active": &graphql.Field{
+				Type: graphql.Boolean,
+			},
 		},
 	},
 )
@@ -57,11 +85,18 @@ var queryType = graphql.NewObject(
 				},
 			},
 
-			"list": &graphql.Field{
+			"students": &graphql.Field{
 				Type:        graphql.NewList(studentType),
 				Description: "Get student list",
 				Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 					return getStudents(), nil
+				},
+			},
+			"questions": &graphql.Field{
+				Type:        graphql.NewList(questionType),
+				Description: "Get questions",
+				Resolve: func(params graphql.ResolveParams) (interface{}, error) {
+					return getQuestions(), nil
 				},
 			},
 		},
