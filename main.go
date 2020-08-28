@@ -1,9 +1,10 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"github.com/graphql-go/graphql"
+	"github.com/graphql-go/handler"
+	"github.com/rs/cors"
 	"net/http"
 )
 
@@ -107,6 +108,13 @@ var schema, _ = graphql.NewSchema(
 		Query:    queryType,
 	},
 )
+var h = handler.New(&handler.Config{
+	Schema: &schema,
+	Pretty: true,
+	GraphiQL: true,
+	Playground: true,
+})
+
 
 func executeQuery(query string, schema graphql.Schema) *graphql.Result {
 	result := graphql.Do(graphql.Params{
@@ -120,12 +128,12 @@ func executeQuery(query string, schema graphql.Schema) *graphql.Result {
 }
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Add("Content-Type", "application/json")
-		result := executeQuery(r.URL.Query().Get("query"), schema)
-		json.NewEncoder(w).Encode(result)
-	})
+	mux := http.NewServeMux()
+
+	mux.Handle("/",h)
+	handler := cors.Default().Handler(mux)
 
 	fmt.Println("Server is running on port 8080")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", handler)
 }
+
