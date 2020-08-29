@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Students and Questions</h1>
-    <button class="btn" v-on:click="studentsf">load students</button>
+    <button class="btn" v-on:click="studentsf">load registered students</button>
     <button class="btn" v-on:click="questionsf">load questions</button>
     <div class="flex-container" v-if="students">
       <div v-bind:key="student.id" v-for="student of students">
@@ -70,7 +70,7 @@ export default {
       axios.post(`http://127.0.0.1:8080/`, {
         query: `
         {
-          students{
+          registeredStudents{
             id
             firstName
             middleName
@@ -81,7 +81,7 @@ export default {
         }
       `
       }).then(res => {
-        this.students = res.data.data.students
+        this.students = res.data.data.registeredStudents
       }).catch(e => {
         console.log(e)
       })

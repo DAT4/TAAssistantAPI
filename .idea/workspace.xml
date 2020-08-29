@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fb11207-1c8b-47d6-aa68-ca7fa62f227c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TAAssistantAPI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/database.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Questions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Questions.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,11 +44,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gf6QQZPdBQN870jRB4Lr2C2rNm" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -54,11 +60,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="go build java" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="java" />
+      <module name="TAAssistantAPI" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/database.go" />
@@ -86,37 +94,46 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="597" height="84" key="GridCell.Tab.0.bottom" timestamp="1598559452728">
+    <state width="1814" height="200" key="GridCell.Tab.0.bottom" timestamp="1598715199903">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="597" height="144" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1598497281572" />
-    <state width="597" height="84" key="GridCell.Tab.0.bottom/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598559452728" />
-    <state width="1260" height="144" key="GridCell.Tab.0.bottom/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598552368925" />
-    <state width="597" height="84" key="GridCell.Tab.0.center" timestamp="1598559452727">
+    <state width="1814" height="200" key="GridCell.Tab.0.bottom/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598715199903" />
+    <state width="1260" height="84" key="GridCell.Tab.0.bottom/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598613133003" />
+    <state width="1814" height="200" key="GridCell.Tab.0.center" timestamp="1598715199902">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="597" height="144" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1598497281572" />
-    <state width="597" height="84" key="GridCell.Tab.0.center/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598559452727" />
-    <state width="1260" height="144" key="GridCell.Tab.0.center/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598552368925" />
-    <state width="597" height="84" key="GridCell.Tab.0.left" timestamp="1598559452727">
+    <state width="1814" height="200" key="GridCell.Tab.0.center/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598715199902" />
+    <state width="1260" height="84" key="GridCell.Tab.0.center/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598613133003" />
+    <state width="1814" height="200" key="GridCell.Tab.0.left" timestamp="1598715199902">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="597" height="144" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1598497281572" />
-    <state width="597" height="84" key="GridCell.Tab.0.left/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598559452727" />
-    <state width="1260" height="144" key="GridCell.Tab.0.left/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598552368925" />
-    <state width="597" height="84" key="GridCell.Tab.0.right" timestamp="1598559452728">
+    <state width="1814" height="200" key="GridCell.Tab.0.left/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598715199902" />
+    <state width="1260" height="84" key="GridCell.Tab.0.left/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598613133003" />
+    <state width="1814" height="200" key="GridCell.Tab.0.right" timestamp="1598715199902">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="597" height="144" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1598497281572" />
-    <state width="597" height="84" key="GridCell.Tab.0.right/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598559452728" />
-    <state width="1260" height="144" key="GridCell.Tab.0.right/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598552368925" />
-    <state x="0" y="-119" width="770" height="756" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598559009776">
+    <state width="1814" height="200" key="GridCell.Tab.0.right/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598715199902" />
+    <state width="1260" height="84" key="GridCell.Tab.0.right/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598613133003" />
+    <state x="449" y="332" key="SettingsEditor" timestamp="1598613381561">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="449" y="332" key="SettingsEditor/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598613381561" />
+    <state x="277" y="168" width="770" height="761" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598714996902">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="-72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.768@0.0.1366.768" timestamp="1598496511942" />
     <state x="0" y="258" width="770" height="756" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1598493531419" />
-    <state x="0" y="-119" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598559009776" />
+    <state x="277" y="168" width="770" height="761" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/277.1080.1366.768/0.0.1920.1080@0.0.1920.1080" timestamp="1598714996902" />
+    <state x="277" y="294" width="770" height="756" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/277.1080.1366.768/0.0.1920.1080@277.1080.1366.768" timestamp="1598567158255" />
   </component>
 </project>
